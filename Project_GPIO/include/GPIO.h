@@ -29,7 +29,7 @@ typedef enum
  *The Input Parameter : uint32 Port
  *Representation      : The Available Ports
  *
-/*****************************************************/
+*****************************************************/
 #define GPIO_PORTA	0
 #define GPIO_PORTB	1
 #define GPIO_PORTC	2
@@ -41,7 +41,7 @@ typedef enum
  *The Input Parameter :	uint32 Pin
  *Representation      : The Available Pins Wrapping The Masks
  *
-/*****************************************************/
+*****************************************************/
 
 #define PIN0  0x00000001
 #define PIN1  0x00000002
@@ -68,7 +68,7 @@ typedef enum
  *The Input Parameter :	uint32 OutValue
  *Representation      : The Logical Pin Values.
  *
-/*****************************************************/
+*****************************************************/
 
 #define GPIO_LOW	0
 #define GPIO_HIGH	1
@@ -79,7 +79,7 @@ typedef enum
  *The Input Parameter :	uint32 Mode  >> GPIO_strPin_t
  *Representation      : The Available Modes Wrapping The Masks
  *
-/*****************************************************/
+*****************************************************/
 #define Input_Floating  		 			    0b00000000000000000000000000000000
 #define Input_PullUp     					    0b00000000000000000000000000000100
 #define Input_PullDown  					    0b00000000000000000000000000001000
@@ -108,7 +108,7 @@ typedef enum
  *The Input Parameter :	uint32 Speed  >> GPIO_strPin_t
  *Representation      : The Available Speeds Wrapping The Masks
  *
-/*****************************************************/
+*****************************************************/
 
 
 #define Low_Speed	 	0
@@ -122,7 +122,7 @@ typedef enum
  *The Input Parameter :	GPIO_Pin_t Pin  >> GPIO_strPin_t
  *Representation      : The Available Pins , an enum type for Algorithm wise
  *
-/*****************************************************/
+*****************************************************/
 
 typedef enum
 {
@@ -146,17 +146,21 @@ typedef enum
 }GPIO_Pin_t;
 
 
+#define GPIOA		(void*)(0x40020000)
+#define GPIOB		(void*)(0x40020400)
+#define GPIOC		(void*)(0x40020800)
+
 /****************************************************
  *Input Parameter Options of Function : GPIO_initPin ( GPIO_strPin_t* Pin);
  *The Input Parameter :	GPIO_strPin_t
  *Representation      : Representing the Pin Number , Port , Mode and Speed.
  *
-/*****************************************************/
+*****************************************************/
 
 typedef struct {
 
 	GPIO_Pin_t Pin;
-	uint32 Port;
+	void* Port;
 	uint32 Mode;
 	uint32 speed;
 }GPIO_strPin_t;
