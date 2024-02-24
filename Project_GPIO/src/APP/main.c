@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "diag/Trace.h"
-#include "RCC.h"
+#include "RCC/RCC.h"
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-parameter"

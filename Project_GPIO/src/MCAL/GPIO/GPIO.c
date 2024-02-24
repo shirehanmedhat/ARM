@@ -5,7 +5,7 @@
  *      Author: NoteBook
  */
 
-#include "GPIO.h"
+#include "GPIO/GPIO.h"
 
 #define MODER_INPUT_MASK  0b00
 #define MODER_OUTPUT_MASK 0b01
@@ -32,7 +32,7 @@ typedef struct
 {
 	uint32 GPIOx_MODER;
 	uint32 GPIOx_OTYPER;
-	uint32	GPIOx_OSPEEDR;
+	uint32 GPIOx_OSPEEDR;
 	uint32 GPIOx_PUPDR;
 	uint32 GPIOx_IDR;
 	uint32 GPIOx_ODR;
@@ -54,15 +54,7 @@ typedef struct
 };
 */
 
-/*
- * typedef struct {
 
-	GPIO_Pin_t Pin;
-	GPIO_Port_t Port;
-	GPIO_Mode_t Mode;
-	GPIO_Speed_t speed;
-}GPIO_strPin_t;
- * */
 
 
 
@@ -122,10 +114,10 @@ GPIO_EnumErrorState GPIO_initPin ( GPIO_strPin_t* Pin)
 
 
 
-GPIO_EnumErrorState GPIO_GetPinValue (uint32 Pin , uint32 Port , uint32* ReadedValue)
+GPIO_EnumErrorState GPIO_GetPinValue (uint32 Pin , void* Port , uint32* ReadedValue)
 {
 	GPIO_EnumErrorState GPIO_LocalErrorState = GPIO_NOK;
-	if ( (Pin >= PIN0) && (Pin <= PIN16) && (Port >= GPIO_PORTA) && (Port <= GPIO_PORTC))
+	if ( (Pin >= PIN0) && (Pin <= PIN16) )
 	{
 		GPIO_LocalErrorState = GPIO_OK;
 		/*This line returns the bit value at its location but we want to return 1 or 0 only*/
@@ -150,10 +142,10 @@ GPIO_EnumErrorState GPIO_GetPinValue (uint32 Pin , uint32 Port , uint32* ReadedV
 }
 
 
-GPIO_EnumErrorState GPIO_SetPinValue (uint32 Pin , uint32 Port , uint32 OutValue)
+GPIO_EnumErrorState GPIO_SetPinValue (uint32 Pin , void* Port , uint32 OutValue)
 {
 	GPIO_EnumErrorState GPIO_LocalErrorState = GPIO_NOK;
-	if ( (Pin >= PIN0) && (Pin <= PIN16) && (Port >= GPIO_PORTA) && (Port <= GPIO_PORTC))
+	if ( (Pin >= PIN0) && (Pin <= PIN16) )
 	{
 		GPIO_LocalErrorState = GPIO_OK;
 		switch (OutValue)

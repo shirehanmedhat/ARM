@@ -23,18 +23,32 @@ typedef enum
 	GPIO_OK
 }GPIO_EnumErrorState;
 
-/****************************************************
+/*
+***************************************************
  *Input Parameter Options of Function : GPIO_SetPinValue();
  *Input Parameter Options of Function : GPIO_GetPinValue();
  *The Input Parameter : uint32 Port
  *Representation      : The Available Ports
  *
-*****************************************************/
+****************************************************
 #define GPIO_PORTA	0
 #define GPIO_PORTB	1
 #define GPIO_PORTC	2
-
-
+*/
+/****************************************************************************
+ *****************************MOIFICATION************************************
+ ****************************************************************************/
+/****************************************************************************
+ *Input Parameter Options of Function : GPIO_SetPinValue();
+ *Input Parameter Options of Function : GPIO_GetPinValue();
+ *The Input Parameter :	void* Port
+ *Representation      : The base addresses for each GPIO instance
+ *Saving Memory wise modification: no array for multi-instances peripherals
+ *
+*****************************************************************************/
+#define GPIOA		(void*)(0x40020000)
+#define GPIOB		(void*)(0x40020400)
+#define GPIOC		(void*)(0x40020800)
 /****************************************************
  *Input Parameter Options of Function : GPIO_SetPinValue();
  *Input Parameter Options of Function : GPIO_GetPinValue();
@@ -146,9 +160,6 @@ typedef enum
 }GPIO_Pin_t;
 
 
-#define GPIOA		(void*)(0x40020000)
-#define GPIOB		(void*)(0x40020400)
-#define GPIOC		(void*)(0x40020800)
 
 /****************************************************
  *Input Parameter Options of Function : GPIO_initPin ( GPIO_strPin_t* Pin);
@@ -190,7 +201,7 @@ GPIO_EnumErrorState GPIO_initPin ( GPIO_strPin_t* Pin);
  * @description: Sets the logical value (GPIO_LOW or GPIO_HIGH) of a specified pin in a given GPIO port.
  */
 
-GPIO_EnumErrorState GPIO_SetPinValue (uint32 Pin , uint32 Port , uint32 OutValue);
+GPIO_EnumErrorState GPIO_SetPinValue (uint32 Pin , void* Port , uint32 OutValue);
 
 /*************************/
 /* GPIO Get Pin Value Function */
@@ -201,5 +212,5 @@ GPIO_EnumErrorState GPIO_SetPinValue (uint32 Pin , uint32 Port , uint32 OutValue
  * @description: Reads the logical value of a specified pin in a given GPIO port and stores it in the variable pointed to by ReadedValue.
  */
 
-GPIO_EnumErrorState GPIO_GetPinValue (uint32 Pin , uint32 Port , uint32* ReadedValue );
+GPIO_EnumErrorState GPIO_GetPinValue (uint32 Pin , void* Port , uint32* ReadedValue );
 #endif /* GPIO_H_ */
