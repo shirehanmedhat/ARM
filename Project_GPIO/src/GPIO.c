@@ -45,14 +45,14 @@ typedef struct
 
 #define NUM_OF_PORTS	3
 
-volatile GPIO_Peripheral_t* const  GPIO[NUM_OF_PORTS] =
+/*volatile GPIO_Peripheral_t* const  GPIO[NUM_OF_PORTS] =
 {
 		[GPIO_PORTA] = (volatile GPIO_Peripheral_t*)(0x40020000),
 		[GPIO_PORTB] = (volatile GPIO_Peripheral_t*)(0x40020400),
 		[GPIO_PORTC] = (volatile GPIO_Peripheral_t*)(0x40020800)
 
 };
-
+*/
 
 /*
  * typedef struct {
@@ -76,18 +76,18 @@ GPIO_EnumErrorState GPIO_initPin ( GPIO_strPin_t* Pin)
 		/*Get The MODER Register by the MODER Mask */
 		uint32 GetBits =  (Pin->Mode & MODER_MASK);
 		/*Insert Getted Value in the*/
-		uint32 temp = GPIO[Pin->Port]->GPIOx_MODER;
+		uint32 temp =((GPIO_Peripheral_t*)Pin->Port)->GPIOx_MODER;
 		temp = temp & (~((MODER_MASK<< (2*(Pin->Pin)))));
 		temp = temp | GetBits;
-		GPIO[Pin->Port]->GPIOx_MODER = temp;
+		((GPIO_Peripheral_t*)Pin->Port)->GPIOx_MODER = temp;
 		switch (GetBits)
 		{
 			case OUTPUT:
 			{
-				temp = GPIO[Pin->Port]->GPIOx_OSPEEDR;
+				temp = ((GPIO_Peripheral_t*)Pin->Port)->GPIOx_OSPEEDR;
 				temp = temp & (~(TWO_BITS_MASK<< (2*(Pin->Pin))));
 				temp = temp | (Pin->speed  << (2*(Pin->Pin)));
-				GPIO[Pin->Port]->GPIOx_OSPEEDR = temp;
+				((GPIO_Peripheral_t*)Pin->Port)->GPIOx_OSPEEDR = temp;
 			}break;
 			default:
 			{
@@ -98,17 +98,17 @@ GPIO_EnumErrorState GPIO_initPin ( GPIO_strPin_t* Pin)
 
 		/*Get The GPIOx_PUPDR Register by the GPIOx_PUPDR Mask */
 		GetBits =  ((Pin->Mode & PUPDR_MASK)>>2);
-		temp = GPIO[Pin->Port]->GPIOx_PUPDR;
+		temp = ((GPIO_Peripheral_t*)Pin->Port)->GPIOx_PUPDR;
 		temp = temp & (~((TWO_BITS_MASK<< (2*(Pin->Pin)))));
 		temp = temp | GetBits;
-		GPIO[Pin->Port]->GPIOx_PUPDR = temp;
+		((GPIO_Peripheral_t*)Pin->Port)->GPIOx_PUPDR = temp;
 
 		/*Get The GPIOx_OTYPER Register by the GPIOx_OTYPER Mask */
 		GetBits =  ((Pin->Mode & OTYPER_MASK)>>4);
-		temp = GPIO[Pin->Port]->GPIOx_OTYPER;
+		temp = ((GPIO_Peripheral_t*)Pin->Port)->GPIOx_OTYPER;
 		temp = temp & (~((TWO_BITS_MASK<< (Pin->Pin))));
 		temp = temp | GetBits;
-		GPIO[Pin->Port]->GPIOx_OTYPER = temp;
+		((GPIO_Peripheral_t*)Pin->Port)->GPIOx_OTYPER = temp;
 
 
 	}
@@ -129,7 +129,7 @@ GPIO_EnumErrorState GPIO_GetPinValue (uint32 Pin , uint32 Port , uint32* ReadedV
 	{
 		GPIO_LocalErrorState = GPIO_OK;
 		/*This line returns the bit value at its location but we want to return 1 or 0 only*/
-		*ReadedValue = GPIO[Port]->GPIOx_IDR & (Pin);
+		*ReadedValue = ((GPIO_Peripheral_t*)Port)->GPIOx_IDR & (Pin);
 
 		if (*ReadedValue > GPIO_LOW )
 		{
@@ -159,10 +159,10 @@ GPIO_EnumErrorState GPIO_SetPinValue (uint32 Pin , uint32 Port , uint32 OutValue
 		switch (OutValue)
 		{
 		case GPIO_HIGH:
-			GPIO[Port]->GPIOx_ODR = GPIO[Port]->GPIOx_ODR | Pin;
+			((GPIO_Peripheral_t*)Port)->GPIOx_ODR = ((GPIO_Peripheral_t*)Port)->GPIOx_ODR | Pin;
 			break;
 		case GPIO_LOW:
-			GPIO[Port]->GPIOx_ODR = GPIO[Port]->GPIOx_ODR & (~Pin);
+			((GPIO_Peripheral_t*)Port)->GPIOx_ODR = ((GPIO_Peripheral_t*)Port)->GPIOx_ODR & (~Pin);
 			break;
 		default:
 			GPIO_LocalErrorState = GPIO_NOK;
