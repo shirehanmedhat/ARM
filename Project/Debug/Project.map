@@ -1401,7 +1401,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 ./src/main.o
  .debug_macro   0x00000000       0x16 ./src/main.o
  .debug_macro   0x00000000      0x513 ./src/main.o
- .debug_macro   0x00000000       0x8e ./src/main.o
+ .debug_macro   0x00000000       0xa6 ./src/main.o
  .text          0x00000000        0x0 c:/users/notebook/desktop/iti/turkey's/arm_stm32f401/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-errno.o)
  .data          0x00000000        0x0 c:/users/notebook/desktop/iti/turkey's/arm_stm32f401/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-errno.o)
  .bss           0x00000000        0x0 c:/users/notebook/desktop/iti/turkey's/arm_stm32f401/tools/arm gcc/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m\libg_nano.a(lib_a-errno.o)
@@ -2008,7 +2008,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x2902
+.debug_info     0x00000000     0x2907
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0xef ./system/src/newlib/_exit.o
  .debug_info    0x000000ef      0x11f ./system/src/newlib/_sbrk.o
@@ -2020,8 +2020,8 @@ END GROUP
  .debug_info    0x00001178      0x8f4 ./system/src/cortexm/exception_handlers.o
  .debug_info    0x00001a6c      0x4e3 ./system/src/cmsis/system_stm32f4xx.o
  .debug_info    0x00001f4f       0xd1 ./system/src/cmsis/vectors_stm32f401xc.o
- .debug_info    0x00002020      0x6d8 ./src/RCC.o
- .debug_info    0x000026f8      0x20a ./src/main.o
+ .debug_info    0x00002020      0x6dd ./src/RCC.o
+ .debug_info    0x000026fd      0x20a ./src/main.o
 
 .debug_abbrev   0x00000000      0xe58
  *(.debug_abbrev)
@@ -2038,7 +2038,7 @@ END GROUP
  .debug_abbrev  0x00000bd9      0x188 ./src/RCC.o
  .debug_abbrev  0x00000d61       0xf7 ./src/main.o
 
-.debug_line     0x00000000     0x43ca
+.debug_line     0x00000000     0x43c8
  *(.debug_line)
  .debug_line    0x00000000      0x365 ./system/src/newlib/_exit.o
  .debug_line    0x00000365      0x316 ./system/src/newlib/_sbrk.o
@@ -2051,7 +2051,7 @@ END GROUP
  .debug_line    0x000032e3      0xa3a ./system/src/cmsis/system_stm32f4xx.o
  .debug_line    0x00003d1d      0x10f ./system/src/cmsis/vectors_stm32f401xc.o
  .debug_line    0x00003e2c      0x227 ./src/RCC.o
- .debug_line    0x00004053      0x377 ./src/main.o
+ .debug_line    0x00004053      0x375 ./src/main.o
 
 .debug_frame    0x00000000      0x7e0
  *(.debug_frame)
@@ -2105,7 +2105,7 @@ END GROUP
  .debug_str     0x000712c5      0x80e ./src/RCC.o
                                0x2d4c (size before relaxing)
  .debug_str     0x00071ad3       0x19 ./src/main.o
-                               0x7889 (size before relaxing)
+                               0x78f6 (size before relaxing)
 
 .debug_loc      0x00000000     0x1565
  *(.debug_loc)
@@ -2149,7 +2149,7 @@ OUTPUT(Project.elf elf32-littlearm)
  .debug_ranges  0x000001b0      0x188 ./src/RCC.o
  .debug_ranges  0x00000338       0x10 ./src/main.o
 
-.debug_macro    0x00000000    0x12b7e
+.debug_macro    0x00000000    0x12b74
  .debug_macro   0x00000000      0x19c ./system/src/newlib/_exit.o
  .debug_macro   0x0000019c      0x898 ./system/src/newlib/_exit.o
  .debug_macro   0x00000a34       0x9c ./system/src/newlib/_exit.o
@@ -2246,6 +2246,6 @@ OUTPUT(Project.elf elf32-littlearm)
  .debug_macro   0x00012315       0x3b ./system/src/cortexm/exception_handlers.o
  .debug_macro   0x00012350      0x4d2 ./system/src/cmsis/system_stm32f4xx.o
  .debug_macro   0x00012822       0x34 ./system/src/cmsis/vectors_stm32f401xc.o
- .debug_macro   0x00012856       0xb4 ./src/RCC.o
- .debug_macro   0x0001290a       0x8e ./src/RCC.o
- .debug_macro   0x00012998      0x1e6 ./src/main.o
+ .debug_macro   0x00012856       0x92 ./src/RCC.o
+ .debug_macro   0x000128e8       0xa6 ./src/RCC.o
+ .debug_macro   0x0001298e      0x1e6 ./src/main.o

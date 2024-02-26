@@ -1,3 +1,3 @@
-src/RCC.o: ../src/RCC.c ../src/RCC.h
+src/RCC.o: ../src/RCC.c ../include/RCC.h
 
-../src/RCC.h:
+../include/RCC.h:
