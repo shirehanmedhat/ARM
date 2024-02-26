@@ -1,0 +1,4 @@
+[2024-02-26 23:20:20] This is an informational message.
+[2024-02-26 23:20:20] This is another informational message.
+[2024-02-26 23:20:20] This is a warning message.
+[2024-02-26 23:20:20] This is an error message.
