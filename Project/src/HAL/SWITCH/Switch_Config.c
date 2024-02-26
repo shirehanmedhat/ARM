@@ -13,7 +13,7 @@ const SwitchConfig_t Switches [_Switch_Num] =
 {
 		[Switch_One] =
 		{
-				.Pin = PIN2,
+				.Pin = GPIO_PIN1,
 				.Port = GPIOA,
 				.Connection = SW_Input_PullUp
 
