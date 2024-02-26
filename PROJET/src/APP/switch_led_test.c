@@ -26,11 +26,13 @@ int main (void)
 	while (1)
 	{
 		GetSwitchValue (Switch_One , &switch_check );
-		if (switch_check == SWITCH_RELEASED)
+		if  (switch_check != SWITCH_RELEASED)
 		{
-			counter =3000;
 			LED_SetStatus (LED_ONE , LED_STATUS_ON);
-			while (!counter);
+		}
+		else
+		{
+			LED_SetStatus (LED_ONE , LED_STATUS_OFF);
 		}
 
 
