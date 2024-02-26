@@ -13,8 +13,8 @@ const Led_Config_t LEDS [_Led_Num] =
 		[LED_ONE] =
 		{
 				.Port = GPIOA ,
-				.Pin = GPIO_PIN2,
-				.Connection = LED_CONNECTION_REVERSED,
+				.Pin = GPIO_PIN3,
+				.Connection = LED_CONNECTION_FORWARD,
 				.InitState = LED_STATUS_OFF
 
 		}

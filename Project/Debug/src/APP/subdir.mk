@@ -6,17 +6,20 @@
 C_SRCS += \
 ../src/APP/GPIO_test.c \
 ../src/APP/main.c \
-../src/APP/main_led.c 
+../src/APP/main_led.c \
+../src/APP/switch_led_test.c 
 
 OBJS += \
 ./src/APP/GPIO_test.o \
 ./src/APP/main.o \
-./src/APP/main_led.o 
+./src/APP/main_led.o \
+./src/APP/switch_led_test.o 
 
 C_DEPS += \
 ./src/APP/GPIO_test.d \
 ./src/APP/main.d \
-./src/APP/main_led.d 
+./src/APP/main_led.d \
+./src/APP/switch_led_test.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

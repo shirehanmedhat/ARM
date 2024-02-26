@@ -33,8 +33,15 @@ LED_EnumErrorState LED_init (void)
 LED_EnumErrorState LED_SetStatus (uint32 LED , u8 Status)
 {
 	LED_EnumErrorState  LED_LocalErrorState = LED_NOK;
-
-	GPIO_SetPinValue (PIN_TO_SET,LEDS[LED].Port,LEDS[LED].Connection ^ Status);
+	switch (LEDS[LED].Connection)
+	{
+	case LED_CONNECTION_FORWARD:
+	GPIO_SetPinValue (PIN_TO_SET,LEDS[LED].Port,LEDS[LED].Connection ^ (Status));
+	break;
+	case LED_CONNECTION_REVERSED:
+	GPIO_SetPinValue (PIN_TO_SET,LEDS[LED].Port,LEDS[LED].Connection ^ (!Status));
+	break;
+	}
 
 	return LED_LocalErrorState;
 

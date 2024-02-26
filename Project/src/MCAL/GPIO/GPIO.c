@@ -92,14 +92,14 @@ GPIO_EnumErrorState GPIO_initPin ( GPIO_strPin_t* Pin)
 		GetBits =  ((Pin->Mode & PUPDR_MASK)>>2);
 		temp = ((GPIO_Peripheral_t*)(Pin->Port))->GPIOx_PUPDR;
 		temp = temp & (~((TWO_BITS_MASK<< (2*(Pin->Pin)))));
-		temp = temp | GetBits;
+		temp = temp | (GetBits<<(2*(Pin->Pin)));
 		((GPIO_Peripheral_t*)(Pin->Port))->GPIOx_PUPDR = temp;
 
 		/*Get The GPIOx_OTYPER Register by the GPIOx_OTYPER Mask */
 		GetBits =  ((Pin->Mode & OTYPER_MASK)>>4);
 		temp = ((GPIO_Peripheral_t*)(Pin->Port))->GPIOx_OTYPER;
 		temp = temp & (~((TWO_BITS_MASK<< (Pin->Pin))));
-		temp = temp | GetBits;
+		temp = temp | (GetBits<<(Pin->Pin));
 		((GPIO_Peripheral_t*)(Pin->Port))->GPIOx_OTYPER = temp;
 
 

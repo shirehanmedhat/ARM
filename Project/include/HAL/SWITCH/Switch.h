@@ -11,11 +11,16 @@
 typedef unsigned char u8;
 typedef unsigned int uint32;
 #define NULL ((void *)0)
+#define SWITCH_TO_SET	PIN1
 /*********Connection Options ****************/
 #define SW_Input_Floating  		 			    0b00000000000000000000000000000000
-#define SW_Input_PullUp     					    0b00000000000000000000000000000100
+#define SW_Input_PullUp     					0b00000000000000000000000000000100
 #define SW_Input_PullDown  					    0b00000000000000000000000000001000
 /********************************************/
+
+
+#define SWITCH_PRESSED	1
+#define SWITCH_RELEASED	0
 typedef enum
 {
 	SWITCH_NOK,

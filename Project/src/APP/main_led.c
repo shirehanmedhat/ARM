@@ -6,7 +6,7 @@
  */
 
 
-
+/*
 #include "RCC/RCC.h"
 
 #include "LED/LED.h"
@@ -25,7 +25,7 @@ int main (void)
 
 	while (1)
 	{
-		uint32 counter =3000;
+		suint32 counter =3000;
 
 		LED_SetStatus (LED_ONE , LED_STATUS_ON);
 		while (!counter);
@@ -39,3 +39,4 @@ int main (void)
 
 	return 0;
 }
+*/

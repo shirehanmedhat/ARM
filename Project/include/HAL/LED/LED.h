@@ -17,7 +17,7 @@ typedef enum
 	LED_NOK,
 	LED_OK
 }LED_EnumErrorState;
-#define PIN_TO_SET	PIN2
+#define PIN_TO_SET	PIN3
 
 
 
