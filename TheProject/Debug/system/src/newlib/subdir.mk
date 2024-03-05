@@ -43,14 +43,14 @@ system/src/newlib/%.o: ../system/src/newlib/%.cpp
 system/src/newlib/%.o: ../system/src/newlib/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GNU Arm Cross C Compiler'
-	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"E:\tourkey\Project_GPIO_Mod2\include\HAL" -I"E:\tourkey\Project_GPIO_Mod2\include\HAL" -I"E:\tourkey\Project_GPIO_Mod2\include\MCAL" -I"E:\tourkey\Project_GPIO_Mod2\include" -I"E:\tourkey\Project_GPIO_Mod2\include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"E:\tourkey\Project_NVIC\include\HAL" -I"E:\tourkey\Project_NVIC\include\HAL" -I"E:\tourkey\Project_NVIC\include\MCAL" -I"E:\tourkey\Project_NVIC\include" -I"E:\tourkey\Project_NVIC\include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
 system/src/newlib/_startup.o: ../system/src/newlib/_startup.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GNU Arm Cross C Compiler'
-	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -DOS_INCLUDE_STARTUP_INIT_MULTIPLE_RAM_SECTIONS -I"../include" -I"E:\tourkey\Project_GPIO_Mod2\include\HAL" -I"E:\tourkey\Project_GPIO_Mod2\include\HAL" -I"E:\tourkey\Project_GPIO_Mod2\include\MCAL" -I"E:\tourkey\Project_GPIO_Mod2\include" -I"E:\tourkey\Project_GPIO_Mod2\include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"system/src/newlib/_startup.d" -c -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -DOS_INCLUDE_STARTUP_INIT_MULTIPLE_RAM_SECTIONS -I"../include" -I"E:\tourkey\Project_NVIC\include\HAL" -I"E:\tourkey\Project_NVIC\include\HAL" -I"E:\tourkey\Project_NVIC\include\MCAL" -I"E:\tourkey\Project_NVIC\include" -I"E:\tourkey\Project_NVIC\include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"system/src/newlib/_startup.d" -c -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
