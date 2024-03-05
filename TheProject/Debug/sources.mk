@@ -31,6 +31,7 @@ src/APP \
 src/HAL/LED \
 src/HAL/SWITCH \
 src/MCAL/GPIO \
+src/MCAL/NVIC \
 src/MCAL/RCC \
 system/src/cmsis \
 system/src/cortexm \
