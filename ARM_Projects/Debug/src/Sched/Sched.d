@@ -1,11 +1,16 @@
-src/Sched/Sched.o: ../src/Sched/Sched.c ../include/SCHED/Sched.h \
- ../include/LIB/STD_TYPES.h ../include/MCAL/SYSTICK/SYSTICK.h \
- E:\tourkey\TrafficLightApp_FINISH\include\LIB/STD_TYPES.h
+src/Sched/Sched.o: ../src/Sched/Sched.c \
+ E:\tourkey\LCD\include/SCHED/Sched.h \
+ E:\tourkey\LCD\include/LIB/STD_TYPES.h \
+ E:\tourkey\LCD\include/MCAL/SYSTICK/SYSTICK.h \
+ E:\tourkey\LCD\include\LIB/STD_TYPES.h \
+ e:\tourkey\lcd\include\hal\lcd\lcd.h
 
-../include/SCHED/Sched.h:
+E:\tourkey\LCD\include/SCHED/Sched.h:
 
-../include/LIB/STD_TYPES.h:
+E:\tourkey\LCD\include/LIB/STD_TYPES.h:
 
-../include/MCAL/SYSTICK/SYSTICK.h:
+E:\tourkey\LCD\include/MCAL/SYSTICK/SYSTICK.h:
 
-E:\tourkey\TrafficLightApp_FINISH\include\LIB/STD_TYPES.h:
+E:\tourkey\LCD\include\LIB/STD_TYPES.h:
+
+e:\tourkey\lcd\include\hal\lcd\lcd.h:

@@ -12,14 +12,13 @@
 
 
 //creating a type of pointer to function for callback function
-#define TICK_MS 500
+#define TICK_MS 1
 typedef void (*RunnableCB_t) (void);
 
 typedef enum
 {
 
 	Runnable_1,
-	Runnable_2,
 	_Max_RUNNABLE_NUM
 
 }Max_Size;

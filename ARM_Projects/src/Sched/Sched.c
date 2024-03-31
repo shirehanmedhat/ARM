@@ -6,8 +6,10 @@
  */
 #include "SCHED/Sched.h"
 #include "MCAL/SYSTICK/SYSTICK.h"
-
+#include "../HAL/LCD/LCD.h"
 extern volatile Runnable_t Runnables_Arr[_Max_RUNNABLE_NUM];
+
+
 //Strcut To Contain The RunTime info
 //if there is no Time Stamp Global Variable then you will need this structure
 //But If The Architect determined a fixed Time Stamp , Then No Need For This Struct

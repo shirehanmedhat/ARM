@@ -1,1 +1,0 @@
-src/APP_TESTS/NVIC/NVIC_Test.o: ../src/APP_TESTS/NVIC/NVIC_Test.c

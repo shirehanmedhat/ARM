@@ -12,9 +12,9 @@
 typedef enum
 {
 	LED_GREEN,
-	LED_YELLOW,
-	LED_RED,
-	LED_ONE,
+//	LED_YELLOW,
+//	LED_RED,
+//	LED_ONE,
 	_Led_Num
 
 }Leds_t;
