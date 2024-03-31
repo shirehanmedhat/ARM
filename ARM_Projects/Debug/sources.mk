@@ -27,11 +27,13 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-src/APP_TESTS/GPIO \
-src/APP_TESTS/NVIC \
-src/APP_TESTS/RCC \
-src/APP_TESTS/SCHED_TrafficLights \
-src/APP_TESTS/STK \
+src/APP_TEST/GPIO \
+src/APP_TEST/LCD \
+src/APP_TEST/NVIC \
+src/APP_TEST/RCC \
+src/APP_TEST/SCHED_TrafficLights \
+src/APP_TEST/STK \
+src/HAL/LCD \
 src/HAL/LED \
 src/HAL/SWITCH \
 src/MCAL/GPIO \

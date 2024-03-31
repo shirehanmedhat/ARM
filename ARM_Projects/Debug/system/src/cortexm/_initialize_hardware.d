@@ -9,7 +9,7 @@ system/src/cortexm/_initialize_hardware.o: \
  ../system/include/cmsis/core_cmSimd.h \
  ../system/include/cmsis/system_stm32f4xx.h \
  ../system/include/stm32f4-hal/stm32f4xx_hal.h \
- ../include/stm32f4xx_hal_conf.h \
+ E:\tourkey\LCD_PROJECT\include/stm32f4xx_hal_conf.h \
  ../system/include/stm32f4-hal/stm32f4xx_hal_rcc.h \
  ../system/include/stm32f4-hal/stm32f4xx_hal_def.h \
  ../system/include/cmsis/stm32f4xx.h \
@@ -92,7 +92,7 @@ system/src/cortexm/_initialize_hardware.o: \
 
 ../system/include/stm32f4-hal/stm32f4xx_hal.h:
 
-../include/stm32f4xx_hal_conf.h:
+E:\tourkey\LCD_PROJECT\include/stm32f4xx_hal_conf.h:
 
 ../system/include/stm32f4-hal/stm32f4xx_hal_rcc.h:
 

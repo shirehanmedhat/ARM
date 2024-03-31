@@ -17,7 +17,7 @@ C_DEPS += \
 src/MCAL/SYSTICK/%.o: ../src/MCAL/SYSTICK/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GNU Arm Cross C Compiler'
-	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"E:\tourkey\TrafficLightApp_FINISH\include" -I"E:\tourkey\TrafficLightApp_FINISH\include\LIB" -I"E:\tourkey\TrafficLightApp_FINISH\include\HAL" -I"E:\tourkey\TrafficLightApp_FINISH\include\HAL" -I"E:\tourkey\TrafficLightApp_FINISH\include\MCAL" -I"E:\tourkey\TrafficLightApp_FINISH\include" -I"E:\tourkey\TrafficLightApp_FINISH\include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"E:\tourkey\LCD\include" -I"E:\tourkey\LCD\include" -I"E:\tourkey\LCD\include\HAL" -I"E:\tourkey\LCD\include\LIB" -I"E:\tourkey\LCD\include\MCAL" -I"E:\tourkey\LCD\include\SCHED" -I"../include" -I"E:\tourkey\LCD\include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

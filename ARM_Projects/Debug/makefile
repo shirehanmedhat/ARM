@@ -19,11 +19,13 @@ RM := rm -rf
 -include src/MCAL/GPIO/subdir.mk
 -include src/HAL/SWITCH/subdir.mk
 -include src/HAL/LED/subdir.mk
--include src/APP_TESTS/STK/subdir.mk
--include src/APP_TESTS/SCHED_TrafficLights/subdir.mk
--include src/APP_TESTS/RCC/subdir.mk
--include src/APP_TESTS/NVIC/subdir.mk
--include src/APP_TESTS/GPIO/subdir.mk
+-include src/HAL/LCD/subdir.mk
+-include src/APP_TEST/STK/subdir.mk
+-include src/APP_TEST/SCHED_TrafficLights/subdir.mk
+-include src/APP_TEST/RCC/subdir.mk
+-include src/APP_TEST/NVIC/subdir.mk
+-include src/APP_TEST/LCD/subdir.mk
+-include src/APP_TEST/GPIO/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -58,38 +60,38 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 SECONDARY_FLASH += \
-TrafficLightApp_FINISH.hex \
+LCD.hex \
 
 SECONDARY_SIZE += \
-TrafficLightApp_FINISH.siz \
+LCD.siz \
 
 
 # All Target
-all: TrafficLightApp_FINISH.elf secondary-outputs
+all: LCD.elf secondary-outputs
 
 # Tool invocations
-TrafficLightApp_FINISH.elf: $(OBJS) $(USER_OBJS)
+LCD.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GNU Arm Cross C++ Linker'
-	arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"TrafficLightApp_FINISH.map" --specs=nano.specs -o "TrafficLightApp_FINISH.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"LCD.map" --specs=nano.specs -o "LCD.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-TrafficLightApp_FINISH.hex: TrafficLightApp_FINISH.elf
+LCD.hex: LCD.elf
 	@echo 'Invoking: GNU Arm Cross Create Flash Image'
-	arm-none-eabi-objcopy -O ihex "TrafficLightApp_FINISH.elf"  "TrafficLightApp_FINISH.hex"
+	arm-none-eabi-objcopy -O ihex "LCD.elf"  "LCD.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-TrafficLightApp_FINISH.siz: TrafficLightApp_FINISH.elf
+LCD.siz: LCD.elf
 	@echo 'Invoking: GNU Arm Cross Print Size'
-	arm-none-eabi-size --format=berkeley "TrafficLightApp_FINISH.elf"
+	arm-none-eabi-size --format=berkeley "LCD.elf"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(SECONDARY_FLASH)$(SECONDARY_SIZE)$(ASM_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(CPP_DEPS) TrafficLightApp_FINISH.elf
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(SECONDARY_FLASH)$(SECONDARY_SIZE)$(ASM_DEPS)$(S_UPPER_DEPS)$(C_DEPS)$(CPP_DEPS) LCD.elf
 	-@echo ' '
 
 secondary-outputs: $(SECONDARY_FLASH) $(SECONDARY_SIZE)

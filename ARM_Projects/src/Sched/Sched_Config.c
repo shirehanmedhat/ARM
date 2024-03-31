@@ -8,24 +8,18 @@
 #include "SCHED/Sched.h"
 
 
-extern void TrafficLights(void);
-extern void App1_Runnable (void);
-
+//extern void TrafficLights(void);
+//extern void App1_Runnable (void);
+extern void LCD_TASK (void);
 volatile Runnable_t Runnables_Arr[_Max_RUNNABLE_NUM] =
 {
     [Runnable_1] = {
-        .name = "Traffic_Runnable",
-        .PeriodicityMs = 1000,
+        .name = "LCD",
+        .PeriodicityMs = 2,
         .Priority = 0,
-        .CallBack = TrafficLights,
+        .CallBack = LCD_TASK,
         .DelayMs = 0
     },
 
-    [Runnable_2] = {
-        .name = "App2_Runnable",
-        .PeriodicityMs = 2000,
-        .Priority = 1,
-        .CallBack = App1_Runnable,
-        .DelayMs = 0
-    }
+
 };
